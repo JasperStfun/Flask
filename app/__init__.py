@@ -1,7 +1,9 @@
 
+# -*- coding: utf-8 -*-
 import logging
 import os
-from flask import Flask, config
+from flask import Flask
+from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -10,13 +12,16 @@ from logging.handlers import SMTPHandler, RotatingFileHandler
 
 from config import Config
 
+
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
+login.login_message = 'Для начала вам нужно войти'
 mail = Mail(app)
+bootstrap = Bootstrap(app)
 
 
 if not app.debug:
