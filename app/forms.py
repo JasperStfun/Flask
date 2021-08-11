@@ -1,4 +1,4 @@
-import email
+from flask_babel import lazy_gettext as _l
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
@@ -6,35 +6,35 @@ from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationE
 from app.models import User
 
 class LoginForm(FlaskForm):
-    username = StringField('Имя', validators=[DataRequired()])
-    password = PasswordField('Пароль', validators=[DataRequired()])
-    remember_me = BooleanField('Запомнить меня')
-    submit = SubmitField('Войти')
+    username = StringField(_l('Имя'), validators=[DataRequired()])
+    password = PasswordField(_l('Пароль'), validators=[DataRequired()])
+    remember_me = BooleanField(_l('Запомни меня'))
+    submit = SubmitField(_l('Войти'))
 
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Имя', validators=[DataRequired()])
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Пароль', validators=[DataRequired()])
-    password2 = PasswordField('Повторите пароль', 
+    username = StringField(_l('Имя'), validators=[DataRequired()])
+    email = StringField(_l('Email'), validators=[DataRequired(), Email()])
+    password = PasswordField(_l('Пароль'), validators=[DataRequired()])
+    password2 = PasswordField(_l('Повторите пароль'), 
                               validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField('Регистрация')
+    submit = SubmitField(_l('Регистрация'))
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
-            raise ValidationError('Это имя уже занято.')
+            raise ValidationError(_l('Это имя уже занято'))
 
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
-            raise ValidationError('Эта почта уже используется.')
+            raise ValidationError(_l('Эта почта уже используется'))
 
 
 class EditProfileForm(FlaskForm):
-    username = StringField('Имя', validators=[DataRequired()])
-    about_me = TextAreaField('О себе', validators=[Length(min=0, max=140)])
-    submit = SubmitField('Отправить')
+    username = StringField(_l('Имя'), validators=[DataRequired()])
+    about_me = TextAreaField(_l('О себе'), validators=[Length(min=0, max=140)])
+    submit = SubmitField(_l('Отправить'))
 
     def __init__(self, original_username, *args, **kwargs):
         super(EditProfileForm, self).__init__(*args, **kwargs)
@@ -44,22 +44,22 @@ class EditProfileForm(FlaskForm):
         if username.data != self.original_username:
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
-                raise ValidationError('Это имя уже занято')
+                raise ValidationError(_l('Это имя уже занято'))
 
 
 class PostForm(FlaskForm):
-    post = TextAreaField('Сообщение...', validators=[
+    post = TextAreaField(_l('Скажите что-нибудь:'), validators=[
         DataRequired(), Length(min=1, max=140)])
-    submit = SubmitField('Отправить')
+    submit = SubmitField(_l('Отправить'))
 
 
 class ResetPasswordRequestForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    submit = SubmitField('Запросить сброс пароля')
+    email = StringField(_l('Email'), validators=[DataRequired(), Email()])
+    submit = SubmitField(_l('Запросить сброс пароля'))
 
 
 class ResetPasswordForm(FlaskForm):
-    password = PasswordField('Пароль', validators=[DataRequired()])
-    password2 = PasswordField('Повторите пароль', 
+    password = PasswordField(_l('Пароль'), validators=[DataRequired()])
+    password2 = PasswordField(_l('Повторите пароль'), 
                               validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField('Сбросить пароль')
+    submit = SubmitField(_l('Сбросить пароль'))
