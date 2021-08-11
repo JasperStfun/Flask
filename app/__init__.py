@@ -26,6 +26,9 @@ mail = Mail(app)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 babel = Babel(app)
+login.login_message = 'Для начала вам нужно войти'
+mail = Mail(app)
+bootstrap = Bootstrap(app)
 
 
 if not app.debug:
