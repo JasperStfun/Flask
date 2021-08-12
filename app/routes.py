@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
-from flask_babel import _
-from flask import render_template, flash, redirect, request, url_for
+from flask_babel import _, get_locale
+from flask import g, render_template, flash, redirect, request, url_for
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 
@@ -29,7 +29,7 @@ def index():
         if posts.has_next else None
     prev_url = url_for('index', page=posts.prev_num) \
         if posts.has_prev else None
-    return render_template('index.html', title='Домашняя страница', form=form,
+    return render_template('index.html', title=_('Домашняя страница'), form=form,
                            posts=posts.items, next_url=next_url, prev_url=prev_url)
 
 
@@ -62,7 +62,7 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(next_page)
-    return render_template('login.html', title="Войти", form=form)
+    return render_template('login.html', title=_("Войти"), form=form)
 
 
 @app.route('/logout')
@@ -83,7 +83,7 @@ def register():
         db.session.commit()
         flash(_('Поздравляем, вы зарегистрировались!'))
         return redirect(url_for('login'))
-    return render_template('register.html', title='Регистрация', form=form)
+    return render_template('register.html', title=_('Регистрация'), form=form)
 
 
 @app.route('/user/<username>')
@@ -98,7 +98,7 @@ def user(username):
     prev_url = url_for('user', username=user.username, page=posts.prev_num) \
         if posts.has_prev else None
     return render_template('user.html', user=user, posts=posts.items,
-                           next_url=next_url, prev_url=prev_url, title='Профиль')
+                           next_url=next_url, prev_url=prev_url, title=_('Профиль'))
 
 
 @app.before_request
@@ -106,6 +106,7 @@ def last_visit():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
+        g.locale = str(get_locale())
 
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
@@ -121,7 +122,7 @@ def edit_profile():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
-    return render_template('edit_profile.html', title='Редактирование профиля',
+    return render_template('edit_profile.html', title=_('Редактирование профиля'),
                            form=form)
 
 
@@ -168,7 +169,7 @@ def reset_password_request():
             send_password_reset_email(user)
         flash(_('На вашу почту высланы инструкции по сбросу пароля'))
         return redirect(url_for('login'))
-    return render_template('reset_password_request.html', title='Сброс пароля',
+    return render_template('reset_password_request.html', title=_('Сброс пароля'),
                            form=form)
 
 

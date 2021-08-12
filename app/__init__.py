@@ -21,12 +21,9 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
-login.login_message = _l('Для начала вам нужно войти')
-mail = Mail(app)
-bootstrap = Bootstrap(app)
 moment = Moment(app)
 babel = Babel(app)
-login.login_message = 'Для начала вам нужно войти'
+login.login_message = _l('Для начала вам нужно войти')
 mail = Mail(app)
 bootstrap = Bootstrap(app)
 
@@ -61,7 +58,8 @@ if not app.debug:
 
 @babel.localeselector
 def get_locale():
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    #return request.accept_languages.best_match(app.config['LANGUAGES'])
+    return 'en'
 
 
 from app import routes, models, errors
