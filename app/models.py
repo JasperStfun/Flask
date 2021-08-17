@@ -6,7 +6,7 @@ from hashlib import md5
 from sqlalchemy.orm import backref
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from app import app, db, login
+from app import db, login
 
 
 @login.user_loader
