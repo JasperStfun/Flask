@@ -9,9 +9,9 @@
         </div>
     </div>
     <br>
-    <p>{{ _('Новый пользователь?') }} <a href="{{ url_for('register') }}">{{ _('Зарегистрироваться') }}</a></p>
+    <p>{{ _('Новый пользователь?') }} <a href="{{ url_for('auth.register') }}">{{ _('Зарегистрироваться') }}</a></p>
     <p>
         {{ _('Забыли свой пароль?') }}
-        <a href="{{ url_for('reset_password_request') }}">{{ _('Сбросить пароль') }}</a>
+        <a href="{{ url_for('auth.reset_password_request') }}">{{ _('Сбросить пароль') }}</a>
     </p>
 {% endblock %}

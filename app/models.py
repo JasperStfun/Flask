@@ -6,7 +6,7 @@ from hashlib import md5
 from sqlalchemy.orm import backref
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from app import app, db, login
+from app import db, login
 
 
 @login.user_loader
@@ -85,6 +85,7 @@ class Post(db.Model):
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    language = db.Column(db.String(5))
 
     def __repr__(self):
         return f'Post: {self.body}, user ID: {self.user_id}'
