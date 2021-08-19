@@ -134,3 +134,4 @@ app.db
 migrations/
 *.bat
 *.png
+*.env
