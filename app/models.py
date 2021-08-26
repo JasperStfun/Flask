@@ -23,6 +23,7 @@ class SearchableMixin(object):
         return cls.query.filter(cls.id.in_(ids)).order_by(
             db.case(when, value=cls.id)), total
 
+
     @classmethod
     def before_commit(cls, session):
         session._changes = {
