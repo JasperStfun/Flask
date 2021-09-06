@@ -135,3 +135,4 @@ migrations/
 *.bat
 *.png
 *.env
+run.sh
