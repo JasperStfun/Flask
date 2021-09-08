@@ -131,7 +131,6 @@ dmypy.json
 config.py
 .vscode
 app.db
-migrations/
 *.bat
 *.png
 *.env
