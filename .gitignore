@@ -128,9 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-config.py
 .vscode
-app.db
 *.bat
 *.png
 *.env
