@@ -2,12 +2,12 @@ FROM python:slim
 
 RUN useradd microblog
 
-WORKDIR /home/microblog
+WORKDIR /home/jasper/microblog
 
 COPY requirements.txt requirements.txt
-RUN python -m venv venv
-RUN venv/bin/pip install -r requirements.txt
-RUN venv/bin/pip install gunicorn pymysql cryptography
+RUN python -m venv env
+RUN env/bin/pip install -r requirements.txt
+RUN env/bin/pip install gunicorn pymysql cryptography
 
 COPY app app
 COPY migrations migrations
