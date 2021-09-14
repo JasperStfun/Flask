@@ -201,6 +201,17 @@ def messages():
                            next_url=next_url, prev_url=prev_url)
 
 
+@bp.route('/export_posts')
+@login_required
+def export_posts():
+    if current_user.get_task_in_progress('export_posts'):
+        flash(_('Задача экспорта выполняется'))
+    else:
+        current_user.launch_task('export_posts', _('Экспорт постов...'))
+        db.session.commit()
+    return redirect(url_for('main.user', username=current_user.username))
+
+
 @bp.route('/notifications')
 @login_required
 def notifications():
