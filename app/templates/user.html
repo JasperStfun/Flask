@@ -14,6 +14,9 @@
                 <p>{{ _('%(count)d подписчиков', count=user.followers.count()) }}, {{ _('%(count)d подписок', count=user.followed.count()) }}</p>
                 {% if user == current_user %}
                 <p><a href="{{ url_for('main.edit_profile') }}">{{ _('Редактировать ваш профиль') }}</a></p>
+                {% if not current_user.get_task_in_progress('export_posts') %}
+                <p><a href="{{ url_for('main.export_posts') }}">{{ _('Экспорт ваших постов') }}</a></p>
+                {% endif %}
                 {% elif not current_user.is_following(user) %}
                 <p>
                     <form action="{{ url_for('main.follow', username=user.username) }}" method="post">
