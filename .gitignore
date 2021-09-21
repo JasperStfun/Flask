@@ -128,8 +128,11 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .vscode
+
+# My list
 *.bat
 *.png
 *.env
 run.sh
 /certs
+config.py
