@@ -1,0 +1,89 @@
+2021-09-02 16:28:54,504 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-02 16:30:47,478 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-02 16:40:00,359 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-02 17:19:15,540 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-02 17:25:05,792 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-02 17:25:11,377 ERROR: Exception on /edit_profile [GET] [in /home/jasper/projects/Flask/env/lib/python3.8/site-packages/flask/app.py:1454]
+Traceback (most recent call last):
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/jasper/projects/Flask/app/main/routes.py", line 101, in edit_profile
+    return render_template('edit_profilee.html', title=_('Редактирование профиля'),
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/jinja2/environment.py", line 1068, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: edit_profilee.html
+2021-09-02 17:26:55,773 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-02 17:31:44,646 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-03 14:09:04,314 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-08 17:28:47,899 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-08 17:28:47,901 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-08 17:28:47,928 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-08 17:28:48,008 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-10 15:41:32,982 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-10 18:02:38,048 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-10 18:03:12,062 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-10 18:04:32,510 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-10 18:06:13,589 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-10 18:08:20,021 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-10 18:08:48,016 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-10 18:14:53,227 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-10 18:16:31,338 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-10 18:19:15,031 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-13 13:29:40,180 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-13 13:29:54,781 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:87]
+2021-09-14 15:44:35,755 INFO: Microblog startup [in /home/jasper/projects/Flask/./app/__init__.py:91]
+2021-09-14 15:47:35,382 ERROR: Unhandled exception [in /home/jasper/projects/Flask/./app/tasks.py:55]
+Traceback (most recent call last):
+  File "/home/jasper/projects/Flask/./app/tasks.py", line 41, in export_posts
+    time.sleep(5)
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/rq/timeouts.py", line 63, in handle_death_penalty
+    raise self._exception('Task exceeded maximum timeout value '
+rq.timeouts.JobTimeoutException: Task exceeded maximum timeout value (180 seconds)
+2021-09-14 15:58:07,598 INFO: Microblog startup [in /home/jasper/projects/Flask/./app/__init__.py:91]
+2021-09-14 16:01:07,080 ERROR: Unhandled exception [in /home/jasper/projects/Flask/./app/tasks.py:55]
+Traceback (most recent call last):
+  File "/home/jasper/projects/Flask/./app/tasks.py", line 41, in export_posts
+    time.sleep(5)
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/rq/timeouts.py", line 63, in handle_death_penalty
+    raise self._exception('Task exceeded maximum timeout value '
+rq.timeouts.JobTimeoutException: Task exceeded maximum timeout value (180 seconds)
+2021-09-14 16:05:06,084 INFO: Microblog startup [in /home/jasper/projects/Flask/./app/__init__.py:91]
+2021-09-14 16:08:05,566 ERROR: Unhandled exception [in /home/jasper/projects/Flask/./app/tasks.py:55]
+Traceback (most recent call last):
+  File "/home/jasper/projects/Flask/./app/tasks.py", line 41, in export_posts
+    time.sleep(5)
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/rq/timeouts.py", line 63, in handle_death_penalty
+    raise self._exception('Task exceeded maximum timeout value '
+rq.timeouts.JobTimeoutException: Task exceeded maximum timeout value (180 seconds)
+2021-09-14 16:09:26,671 INFO: Microblog startup [in /home/jasper/projects/Flask/./app/__init__.py:91]
+2021-09-14 16:12:26,141 ERROR: Unhandled exception [in /home/jasper/projects/Flask/./app/tasks.py:55]
+Traceback (most recent call last):
+  File "/home/jasper/projects/Flask/./app/tasks.py", line 41, in export_posts
+    time.sleep(5)
+  File "/home/jasper/projects/Flask/env/lib/python3.8/site-packages/rq/timeouts.py", line 63, in handle_death_penalty
+    raise self._exception('Task exceeded maximum timeout value '
+rq.timeouts.JobTimeoutException: Task exceeded maximum timeout value (180 seconds)
+2021-09-21 15:19:16,332 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:94]
+2021-09-21 15:19:33,079 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:94]
+2021-09-21 16:15:29,600 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:94]
+2021-09-21 16:15:40,689 INFO: Microblog startup [in /home/jasper/projects/Flask/app/__init__.py:94]

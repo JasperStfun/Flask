@@ -1,0 +1,11 @@
+
+[doc]
+recommonmark
+sphinx
+sphinx_rtd_theme
+sphinxcontrib-napoleon
+
+[test]
+codecov
+pytest
+pytest-cov
