@@ -5,4 +5,3 @@
 run.sh
 /certs
 config.py
-*.db
