@@ -38,7 +38,7 @@ httpie==2.5.0
 idna==3.2
 itsdangerous==2.0.1
 Jinja2==3.0.1
-Kivy==2.1.0.dev0
+Kivy
 Kivy-Garden==0.1.4
 langdetect==1.0.9
 Mako==1.1.4
