@@ -135,6 +135,5 @@ dmypy.json
 *.env
 run.sh
 /certs
-config.py
 *.db
 /migrations
