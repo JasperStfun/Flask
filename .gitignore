@@ -137,3 +137,4 @@ run.sh
 ./certs
 *.db
 /app/migrations
+/migrations
